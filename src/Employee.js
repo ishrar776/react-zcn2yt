@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-//import Axios from 'axios';
 export default function Employee() {
-  const [valuesName, setValuesNmae] = useState('');
-  const optionData = {
-    method: 'Get',
-    headers: { 'Content-Type': 'application/json' },
+  const url = 'https://jsonplaceholder.typicode.com/users';
+  const [data, setData] = useState([]);
+
+  const fetchInfo = () => {
+    return fetch(url)
+      .then((res) => res.json())
+      .then((d) => setData(d));
   };
   useEffect(() => {
-    fetch('https://dummyjson.com/products', optionData)
-      .then((response) => {
-        setValuesNmae(response.data);
-      })
-      .catch((error) => {
-        console.log('We can not fetch api' + error);
-      });
+    fetchInfo();
   }, []);
 
   return (
@@ -26,12 +22,14 @@ export default function Employee() {
             <tr>
               <th colSpan="4">Metro Areas by State</th>
             </tr>
-            <tr>
-              <th>State Name</th>
-              <th>State Abbreviation</th>
-              <th>City</th>
-              <th>Population</th>
-            </tr>
+            {data.map((item) => (
+              <tr>
+                <th>{item.name}</th>
+                <th>{item.username}</th>
+                <th>{item.email}</th>
+                <th>{item.address.street}</th>
+              </tr>
+            ))}
           </thead>
         </table>
       </div>
