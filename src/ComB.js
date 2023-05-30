@@ -14,10 +14,10 @@ export default function ComB(props) {
     <div>
       <h1>Enter values</h1>
       <p>
-        <input type="text" onChange={enterName} />
+        <input type="text" onChange={enterName} placeholder="Enter Your Name" />
       </p>
       <p>
-        <input type="text" onChange={enterAge} />
+        <input type="text" onChange={enterAge} placeholder="Enter Your Age" />
       </p>
 
       <div></div>
