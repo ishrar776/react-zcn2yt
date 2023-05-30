@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './style.css';
 
 export default function ComB(props) {
-  //const [display, setDisplay] = useState(null);
   const [values, setValues] = useState({
     txtName: '',
     txtAge: '',
@@ -32,9 +31,7 @@ export default function ComB(props) {
     fetch('https://reqres.in/api/posts', optionParameter)
       .then((response) => {
         response.json();
-        //setDisplay(response.data);
         console.log('post is sucesss' + response.json());
-        //console.log(display);
       })
       .catch((error) => {
         console.log('ppst is not done' + error);
