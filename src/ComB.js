@@ -23,6 +23,19 @@ export default function ComB(props) {
   const saveData = (e) => {
     e.preventDefault();
     const allData = { ...values };
+    const optionParameter = {
+      method: 'Post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(allData),
+    };
+    fetch('https://reqres.in/api/posts', optionParameter)
+      .then((response) => {
+        response.json();
+        console.log('post is sucesss' + response.json());
+      })
+      .catch((error) => {
+        console.log('ppst is not done' + error);
+      });
     console.log('values of for is ' + JSON.stringify(allData));
   };
   return (
