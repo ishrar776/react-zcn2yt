@@ -3,17 +3,7 @@ import './style.css';
 export default function Employee() {
   const url = 'https://jsonplaceholder.typicode.com/users';
   const [data, setData] = useState([]);
-
-  const fetchInfo = () => {
-    return fetch(url)
-      .then((res) => res.json())
-      .then((d) => setData(d));
-  };
   useEffect(() => {
-    // fetch(url)
-    //   .then((res) => res.json())
-    //   .then((d) => setData(d));
-    //fetchInfo();
     fetch(url)
       .then((response) => response.json())
       .then((d) => setData(d))
