@@ -4,7 +4,7 @@ import Axios from 'axios';
 export default function Employee() {
   const [valuesName, setValuesNmae] = useState('');
   useEffect(() => {
-    //Axios.get;
+    Axios.get;
   }, []);
 
   return (
