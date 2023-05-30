@@ -10,7 +10,14 @@ export default function Employee() {
       .then((d) => setData(d));
   };
   useEffect(() => {
-    fetchInfo();
+    // fetch(url)
+    //   .then((res) => res.json())
+    //   .then((d) => setData(d));
+    //fetchInfo();
+    fetch(url)
+      .then((response) => response.json())
+      .then((d) => setData(d))
+      .catch((error) => console.log(error));
   }, []);
 
   return (
