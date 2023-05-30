@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import ComB from './ComB';
+import Employee from './Employee';
 
 export default function App() {
   const [valuesName, setValuesNmae] = useState('');
@@ -12,6 +13,9 @@ export default function App() {
       {age && <p>Your age is {age}</p>}
       <div>
         <ComB name1={setValuesNmae} age={setAge} />
+      </div>
+      <div>
+        <Employee />
       </div>
     </div>
   );
