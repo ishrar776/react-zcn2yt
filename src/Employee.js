@@ -20,7 +20,7 @@ export default function Employee() {
               <th colSpan="4">Metro Areas by State</th>
             </tr>
             {data.map((item) => (
-              <tr>
+              <tr key={item.id}>
                 <th>{item.name}</th>
                 <th>{item.username}</th>
                 <th>{item.email}</th>
