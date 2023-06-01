@@ -7,7 +7,7 @@ export default function Employee() {
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((d) => setData(d))
+      .then((d) => setData(d.products))
       .catch((error) => console.log(error));
   }, []);
   return (
@@ -19,7 +19,7 @@ export default function Employee() {
             <tr>
               <th colSpan="4">Metro Areas by State</th>
             </tr>
-            {products.data.map((item) => (
+            {data.map((item) => (
               <tr key={item.id}>
                 <th>{item.description}</th>
                 {/* <th>{item.name}</th>
