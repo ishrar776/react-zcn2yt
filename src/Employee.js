@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 export default function Employee() {
   //const url = 'https://jsonplaceholder.typicode.com/users';
-  const url = 'https://dummyjson.com/products';
+  const url = 'https://dummyjson.com/products'; //if we used this api then d.products
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch(url)
