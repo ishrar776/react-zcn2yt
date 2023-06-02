@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-
 export default function ComB(props) {
   const url = 'https://jsonplaceholder.typicode.com/users';
   const [values, setValues] = useState({
@@ -24,6 +23,12 @@ export default function ComB(props) {
     setValues({ ...values, [name]: value });
   };
   const enterAge = (e) => {
+    props.age(e.target.value);
+    const name = e.target.name;
+    const value = e.target.value;
+    setValues({ ...values, [name]: value });
+  };
+  const drpValues = (e) => {
     props.age(e.target.value);
     const name = e.target.name;
     const value = e.target.value;
@@ -69,7 +74,7 @@ export default function ComB(props) {
         />
       </p>
       <p>
-        <select name="txtSelect" value="" onChange="">
+        <select name="txtSelect" value="" onChange="drpValues">
           {drpValue.map((item) => (
             <option value={item.name}>{item.username}</option>
           ))}
