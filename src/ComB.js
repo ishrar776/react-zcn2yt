@@ -13,15 +13,9 @@ export default function ComB(props) {
   const [drpValue, setDrpValue] = useState([]);
   useEffect(() => {
     fetch(url)
-      .then((response) => {
-        response.json();
-      })
-      .then((d) => {
-        setDrpValue(d);
-      })
-      .catch((error) => {
-        console.log('drpValues can not fetch' + error);
-      });
+      .then((response) => response.json())
+      .then((d) => setDrpValue(d))
+      .catch((error) => console.log('drpValues can not fetch' + error));
   }, []);
   const enterName = (e) => {
     props.name1(e.target.value);
