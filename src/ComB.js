@@ -75,7 +75,9 @@ export default function ComB(props) {
       <p>
         <select name="txtSelect" value={values.txtSelect} onChange={drpValues}>
           {drpValue.map((item) => (
-            <option value={item.name}>{item.username}</option>
+            <option key={item.id} value={item.name}>
+              {item.username}
+            </option>
           ))}
         </select>
       </p>
