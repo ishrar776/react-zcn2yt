@@ -29,6 +29,7 @@ export default function ComB(props) {
     setValues({ ...values, [name]: value });
   };
   const drpValues = (e) => {
+    props.selectvlu(e.target.value);
     const name = e.target.name;
     const value = e.target.value;
     setValues({ ...values, [name]: value });
