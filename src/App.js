@@ -9,7 +9,7 @@ export default function App() {
   const [drpValue, SetdrpValue] = useState('');
   return (
     <div>
-      <h1>Result of Student</h1>
+      <h1>Result of Employee</h1>
       {valuesName && <p>Your name is {valuesName}</p>}
       {age && <p>Your age is {age}</p>}
       {drpValue && <p>Your dropdown value is {drpValue}</p>}
