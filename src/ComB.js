@@ -29,7 +29,6 @@ export default function ComB(props) {
     setValues({ ...values, [name]: value });
   };
   const drpValues = (e) => {
-    props.age(e.target.value);
     const name = e.target.name;
     const value = e.target.value;
     setValues({ ...values, [name]: value });
@@ -74,7 +73,7 @@ export default function ComB(props) {
         />
       </p>
       <p>
-        <select name="txtSelect" value="" onChange="drpValues">
+        <select name="txtSelect" value="" onChange={drpValues}>
           {drpValue.map((item) => (
             <option value={item.name}>{item.username}</option>
           ))}
