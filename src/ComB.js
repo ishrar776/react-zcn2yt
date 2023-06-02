@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 
 export default function ComB(props) {
+  const url = 'https://jsonplaceholder.typicode.com/users';
   const [values, setValues] = useState({
     txtName: '',
     txtAge: '',
+    txtSelect: '',
   });
   // props.name1('israr khan');
   //props.age('15-JAN-1984');
+  const [drpValue, setDrpValue] = useState([]);
+  useEffect(() => {
+    fetch(url)
+      .then((response) => {
+        response.json();
+      })
+      .then((d) => {
+        setDrpValue(d);
+      })
+      .catch((error) => {
+        console.log('drpValues can not fetch' + error);
+      });
+  }, []);
   const enterName = (e) => {
     props.name1(e.target.value);
     const name = e.target.name;
@@ -58,6 +73,13 @@ export default function ComB(props) {
           onChange={enterAge}
           placeholder="Enter Your Age"
         />
+      </p>
+      <p>
+        <select name="txtSelect" value="" onChange="">
+          {drpValue.map((item) => (
+            <option value={item.name}>{item.username}</option>
+          ))}
+        </select>
       </p>
       <p>
         <input type="submit" onClick={saveData} />
